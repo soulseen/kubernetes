@@ -58,7 +58,7 @@ func TestIsDNS1123Subdomain(t *testing.T) {
 		"a.1", "ab.1", "abc.1", "a1.1", "a-1.1", "a--1--2--b.1",
 		"0.a", "01.a", "012.a", "1a.a", "1-a.a", "1--a--b--2",
 		"0.1", "01.1", "012.1", "1a.1", "1-a.1", "1--a--b--2.1",
-		"a.b.c.d.e", "aa.bb.cc.dd.ee", "1.2.3.4.5", "11.22.33.44.55",
+		"a.b.c.d.e", "aa.bb.cc.dd.ee", "1.2.3.4.5", "11.22.33.44.55","aaatest.test.",
 		strings.Repeat("a", 253),
 	}
 	for _, val := range goodValues {
@@ -78,7 +78,7 @@ func TestIsDNS1123Subdomain(t *testing.T) {
 		"0.A", "01.A", "012.A", "1A.a", "1a.A",
 		"A.B.C.D.E", "AA.BB.CC.DD.EE", "a.B.c.d.e", "aa.bB.cc.dd.ee",
 		"a@b", "a,b", "a_b", "a;b",
-		"a:b", "a%b", "a?b", "a$b",
+		"a:b", "a%b", "a?b", "a$b","aaatest.test.",
 		strings.Repeat("a", 254),
 	}
 	for _, val := range badValues {
